@@ -2,10 +2,11 @@ const carrito = document.querySelectorAll("#botonComprar");
 
 let carritoItems = JSON.parse(localStorage.getItem("carrito")) || [];
 
+
 carrito.forEach((element) => {
 
     element.onclick = agregarCarrito;
-    
+
 });
 
 function agregarCarrito(event){

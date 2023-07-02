@@ -1,4 +1,5 @@
 //buscador o filtrador en la seccion productos.
+
 const inputBuscar = document.querySelector("#buscar");
 
 inputBuscar.onkeyup = (e) => {

@@ -1,4 +1,4 @@
-
+/*
 let productos = [
   {
     "id":1,
@@ -92,10 +92,14 @@ let productos = [
     "img": "../pictures/setTejido.jpg"
  }
 ]
-//Dibujamos nuestros productos en el dom, determinando nuestro html
-const renderProductos = (arr) => {
+*/
+
+
+const contenedor = document.querySelector(".productosVole");
+
+//pintamos nuestros productos en el dom, determinando nuestro html
+const renderServicios = (arr) => {
   let html;
-  const contenedor = document.querySelector(".productosVole");
   contenedor.innerHTML = "";
   //recorer con el foreach nuestro array y por cada item genere ese html definido
     arr.forEach(item=>{
@@ -112,7 +116,17 @@ const renderProductos = (arr) => {
     })
   };
 
-renderProductos(productos);
+//declaramos fetchapi para obtener nuestros datos locales 
+const fetchApi= async ()=>{
+  const response= await fetch('../data/db.json');
+  const data= await response.json();
+    
+  renderServicios(data)
+};
+
+fetchApi()
+
+
 
 
 
